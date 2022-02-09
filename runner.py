@@ -7,7 +7,7 @@ from zipfile import ZipFile
 
 
 ASSETS_PATH = './Assets/'
-ASSETS_URL = ''
+ASSETS_URL = 'https://github.com/ptp28/eYSRC21-FinalsGames/blob/Assets/47_Dino_Run_Assets.zip?raw=true'
 
 def extract(filename):
     # opening the zip file in READ mode
