@@ -109,7 +109,7 @@ def Init_screen():
 
 	scrn.tracer(0)  #
 	# registering an image file for further use
-	scrn.register_shape('sudoku-instructions_21.gif')
+	scrn.register_shape('Assets/sudoku-instructions_21.gif')
 
 	turtle.hideturtle()
 
@@ -141,7 +141,7 @@ def Init_screen():
 	Help_pen.goto(45, 45)
 	Help_pen.hideturtle()
 
-	Help_pen.shape('sudoku-instructions_21.gif')  # setting the turtle's shape to an image
+	Help_pen.shape('Assets/sudoku-instructions_21.gif')  # setting the turtle's shape to an image
 	Help_pen.shapesize(1, 1, 10)  # setting the size of the turtle shape
 
 
@@ -168,10 +168,10 @@ def init_board():
 		return
 
 	# Operating on the files for getting the grid and board using the pickle module
-	with open('file.txt', 'rb') as fp:
+	with open('Assets/file.txt', 'rb') as fp:
 		grid_solution = pickle.load(fp)[level_selected - 1]  # Grid contains the numerical values of all the locations
 
-	with open('file_2.txt', 'rb') as fp:
+	with open('Assets/file_2.txt', 'rb') as fp:
 
 		board = pickle.load(fp)[
 			level_selected - 1]  # board contains the numerical values of a few locations, to be shown
@@ -813,48 +813,46 @@ def reinitialize_screen():
 
 
 ########################----- MAIN FUNCTION -----############################
-
-if __name__ == '__main__':
-	"""
-		Purpose:
-		---
-		This is the main condition of the entire program and is executed only once in each run of the program
-		
-		it comprises of the initialization of the screen and sudoku board for the first time.
-		
-		
-		
-	"""
+"""
+	Purpose:
+	---
+	This is the main condition of the entire program and is executed only once in each run of the program
+	
+	it comprises of the initialization of the screen and sudoku board for the first time.
+	
+	
+	
+"""
 
 
-	# Initialising the screen (This is donw only once )
-	Init_screen()
+# Initialising the screen (This is donw only once )
+Init_screen()
 
 
-	# initialising the sudoku board
-	sudoku_board()
+# initialising the sudoku board
+sudoku_board()
 
-	# Asking the user for name
-	input_names_of_player()
+# Asking the user for name
+input_names_of_player()
 
-	# initializing the Dashboard and board, grid values based on level selected by the user
-	init_board()
+# initializing the Dashboard and board, grid values based on level selected by the user
+init_board()
 
 
-	# Displaying the Count_down
-	count_down()
+# Displaying the Count_down
+count_down()
 
-	# initialising the starting time of the game for
-	# calculating the time elapsed
-	start_time = time.time()
+# initialising the starting time of the game for
+# calculating the time elapsed
+start_time = time.time()
 
-	# condition for running the time and click function
-	while gameover(board) is not True:
-		scrn.onclick(play)
-		Game_Run(-1.7, -0.55)
+# condition for running the time and click function
+while gameover(board) is not True:
+	scrn.onclick(play)
+	Game_Run(-1.7, -0.55)
 
-	# Using the turtle.mainloop for letting the screen to stay
-	turtle.mainloop()
+# Using the turtle.mainloop for letting the screen to stay
+turtle.mainloop()
 
 
 #################################################################
