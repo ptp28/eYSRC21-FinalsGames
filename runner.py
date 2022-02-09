@@ -62,8 +62,8 @@ if __name__ == "__main__":
                 print('\nExtracting files ... ')
                 extraction_dir = extract(downloaded_file)
                 print("Extraction complete")
-            except Exception as e:
                 os.remove(downloaded_file)
+            except Exception as e:
                 sys.exit()
         
 
