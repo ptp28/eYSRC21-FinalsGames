@@ -172,9 +172,9 @@ def start():
                 collect.goto(random.choice(x_cors), 320)
             screen.update()
 
-        # Increase speed as points increase
-        if points % 15 == 0 and points >= 15:
-            speed = initial_speed + points / 15
+        # # Increase speed as points increase
+        # if points % 15 == 0 and points >= 15:
+        #     speed = initial_speed + points / 15
 
         screen.update()
 
@@ -464,7 +464,7 @@ for i in range(4):
     coins.append(coin)
 
 player.goto(0, -200)
-initial_speed = 4
+initial_speed = 10
 speed = initial_speed
 
 # Updating the screen
