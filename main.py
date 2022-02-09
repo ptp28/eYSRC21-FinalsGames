@@ -29,17 +29,17 @@ def PvPBlueTurn():
         random_play = random.randint(1, 6)
         blue_dice.showturtle()
         if random_play == 1:
-            blue_dice.shape("blue_one.gif")
+            blue_dice.shape("Assets/blue_one.gif")
         elif random_play == 2:
-            blue_dice.shape("blue_two.gif")
+            blue_dice.shape("Assets/blue_two.gif")
         elif random_play == 3:
-            blue_dice.shape("blue_three.gif")
+            blue_dice.shape("Assets/blue_three.gif")
         elif random_play == 4:
-            blue_dice.shape("blue_four.gif")
+            blue_dice.shape("Assets/blue_four.gif")
         elif random_play == 5:
-            blue_dice.shape("blue_five.gif")
+            blue_dice.shape("Assets/blue_five.gif")
         elif random_play == 6:
-            blue_dice.shape("blue_six.gif")
+            blue_dice.shape("Assets/blue_six.gif")
         for i in range(random_play):
             if blue_pos == 100:
                 break
@@ -113,17 +113,17 @@ def PvPRedTurn():
         random_play = random.randint(1, 6)  # Dice Throw
         red_dice.showturtle()
         if random_play == 1:
-            red_dice.shape("red_one.gif")
+            red_dice.shape("Assets/red_one.gif")
         elif random_play == 2:
-            red_dice.shape("red_two.gif")
+            red_dice.shape("Assets/red_two.gif")
         elif random_play == 3:
-            red_dice.shape("red_three.gif")
+            red_dice.shape("Assets/red_three.gif")
         elif random_play == 4:
-            red_dice.shape("red_four.gif")
+            red_dice.shape("Assets/red_four.gif")
         elif random_play == 5:
-            red_dice.shape("red_five.gif")
+            red_dice.shape("Assets/red_five.gif")
         elif random_play == 6:
-            red_dice.shape("red_six.gif")
+            red_dice.shape("Assets/red_six.gif")
         for i in range(random_play):
             if red_pos == 100:
                 break
@@ -212,7 +212,7 @@ def setup():
     red.showturtle()
     blue_dice.showturtle()
     red_dice.showturtle()
-    window.bgpic("board1.gif")
+    window.bgpic("Assets/board1.gif")
     blue.penup()
     red.penup()
     blue.shape("circle")
@@ -225,20 +225,20 @@ def setup():
     blue_dice.goto(0, -217)
     red_dice.penup()
     red_dice.goto(0, 218)
-    turtle.addshape("red_one.gif")
-    turtle.addshape("red_two.gif")
-    turtle.addshape("red_three.gif")
-    turtle.addshape("red_four.gif")
-    turtle.addshape("red_five.gif")
-    turtle.addshape("red_six.gif")
-    turtle.addshape("blue_one.gif")
-    turtle.addshape("blue_two.gif")
-    turtle.addshape("blue_three.gif")
-    turtle.addshape("blue_four.gif")
-    turtle.addshape("blue_five.gif")
-    turtle.addshape("blue_six.gif")
-    blue_dice.shape("blue_six.gif")
-    red_dice.shape("red_six.gif")
+    turtle.addshape("Assets/red_one.gif")
+    turtle.addshape("Assets/red_two.gif")
+    turtle.addshape("Assets/red_three.gif")
+    turtle.addshape("Assets/red_four.gif")
+    turtle.addshape("Assets/red_five.gif")
+    turtle.addshape("Assets/red_six.gif")
+    turtle.addshape("Assets/blue_one.gif")
+    turtle.addshape("Assets/blue_two.gif")
+    turtle.addshape("Assets/blue_three.gif")
+    turtle.addshape("Assets/blue_four.gif")
+    turtle.addshape("Assets/blue_five.gif")
+    turtle.addshape("Assets/blue_six.gif")
+    blue_dice.shape("Assets/blue_six.gif")
+    red_dice.shape("Assets/red_six.gif")
 
     # Final Writings
     dummy.penup()
@@ -327,17 +327,17 @@ def player_Play():
     random_play = random.randint(1, 6)
     blue_dice.showturtle()
     if random_play == 1:
-        blue_dice.shape("blue_one.gif")
+        blue_dice.shape("Assets/blue_one.gif")
     elif random_play == 2:
-        blue_dice.shape("blue_two.gif")
+        blue_dice.shape("Assets/blue_two.gif")
     elif random_play == 3:
-        blue_dice.shape("blue_three.gif")
+        blue_dice.shape("Assets/blue_three.gif")
     elif random_play == 4:
-        blue_dice.shape("blue_four.gif")
+        blue_dice.shape("Assets/blue_four.gif")
     elif random_play == 5:
-        blue_dice.shape("blue_five.gif")
+        blue_dice.shape("Assets/blue_five.gif")
     elif random_play == 6:
-        blue_dice.shape("blue_six.gif")
+        blue_dice.shape("Assets/blue_six.gif")
     for i in range(random_play):
         if blue_pos == 100:
             break
@@ -404,17 +404,17 @@ def computer_Play(depth=0):
     random_play = random.randint(1, 6)  # Dice Throw
     red_dice.showturtle()
     if random_play == 1:
-        red_dice.shape("red_one.gif")
+        red_dice.shape("Assets/red_one.gif")
     elif random_play == 2:
-        red_dice.shape("red_two.gif")
+        red_dice.shape("Assets/red_two.gif")
     elif random_play == 3:
-        red_dice.shape("red_three.gif")
+        red_dice.shape("Assets/red_three.gif")
     elif random_play == 4:
-        red_dice.shape("red_four.gif")
+        red_dice.shape("Assets/red_four.gif")
     elif random_play == 5:
-        red_dice.shape("red_five.gif")
+        red_dice.shape("Assets/red_five.gif")
     elif random_play == 6:
-        red_dice.shape("red_six.gif")
+        red_dice.shape("Assets/red_six.gif")
     for i in range(random_play):
         if red_pos == 100:
             break
