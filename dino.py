@@ -634,7 +634,20 @@ def on_close():  # When window close button is clicked
     finally:
         exit()  # End the program
 
+print("Loading game...")
+soundtrack_assets = {"https://github.com/Sachin-dot-py/DinoGame/blob/main/assets/General/ForestSoundtrack.wav?raw=true": "ForestSoundtrack.wav",
+                 "https://github.com/Sachin-dot-py/DinoGame/blob/main/assets/General/SuburbSoundtrack.wav?raw=true": "SuburbSoundtrack.wav",
+                 "https://github.com/Sachin-dot-py/DinoGame/blob/main/assets/General/TitleScreenSoundtrack.wav?raw=true": "TitleScreenSoundtrack.wav",
+                 "https://github.com/Sachin-dot-py/DinoGame/blob/main/assets/General/soundtrack.wav?raw=true": "soundtrack.wav"}
 
+# Retrieve the soundtracks if it is not found in the directory
+dir = os.path.join(os.path.split(os.path.abspath(__file__))[0], "Assets", "General")
+for n, (url, filename) in enumerate(soundtrack_assets.items(), start=1):
+	file_path = os.path.join(dir, filename)
+	if not os.path.isfile(file_path):
+		if n == 1: print("This might take a minute for the first time executing the game.\n0% Loaded.")
+		urllib.request.urlretrieve(url, file_path)
+		print(f"{int((n/4)*100)}% Loaded.")
 
 # Setup screen
 screen = turtle.Screen()
