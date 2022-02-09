@@ -50,16 +50,16 @@ GAME_STARTED = False
 ##############################
 
 ####### Registering Shapes ########
-turtle.register_shape("logo.gif")
-turtle.register_shape("cannon.gif")
-turtle.register_shape("cannon_left.gif")
-turtle.register_shape("balloon.gif")
-turtle.register_shape("balloon1.gif")
-turtle.register_shape("bullet.gif")
-turtle.register_shape("kaboom.gif")
-turtle.register_shape("bullet_count (2).gif")
-turtle.register_shape("plus_1.gif")
-turtle.register_shape('winner.gif')
+turtle.register_shape("Assets/logo.gif")
+turtle.register_shape("Assets/cannon.gif")
+turtle.register_shape("Assets/cannon_left.gif")
+turtle.register_shape("Assets/balloon.gif")
+turtle.register_shape("Assets/balloon1.gif")
+turtle.register_shape("Assets/bullet.gif")
+turtle.register_shape("Assets/kaboom.gif")
+turtle.register_shape("Assets/bullet_count (2).gif")
+turtle.register_shape("Assets/plus_1.gif")
+turtle.register_shape('Assets/winner.gif')
 ##################################
 
 def startGame():
@@ -69,23 +69,23 @@ def startGame():
 screen = turtle.Screen()
 screen.setup(WIDTH, HEIGHT)
 
-turtle.bgpic('bg.gif')
+turtle.bgpic('Assets/bg.gif')
 turtle.listen()
 
 logo = turtle.Turtle()
 logo.ht()
-logo.shape("balloon.gif")
+logo.shape("Assets/balloon.gif")
 logo.up()
 logo.goto(0, 0)
 
 img = turtle.Turtle()
-img.shape('logo.gif')
+img.shape('Assets/logo.gif')
 img.goto(0,190)
 logo.showturtle()
 
 bal1 = turtle.Turtle()
 bal1.speed(0)
-bal1.shape('balloon1.gif')
+bal1.shape('Assets/balloon1.gif')
 bal1.ht()
 bal1.up()
 bal1.goto(500, 0)
@@ -141,7 +141,7 @@ turtle.up()
 player1 = turtle.Turtle()
 player1.up()
 player1.speed(0)
-player1.shape('cannon.gif')
+player1.shape('Assets/cannon.gif')
 player1.goto(-450, -200)
 ##########################
 
@@ -149,7 +149,7 @@ player1.goto(-450, -200)
 player2 = turtle.Turtle()
 player2.up()
 player2.speed(0)
-player2.shape('cannon_left.gif')
+player2.shape('Assets/cannon_left.gif')
 player2.goto(450, -200)
 ########################
 
@@ -167,7 +167,7 @@ def setup_balloons():
             balloon = turtle.Turtle()
             balloon.up()
             balloon.speed(10)
-            balloon.shape('balloon1.gif')
+            balloon.shape('Assets/balloon1.gif')
             balloon.goto(-x * 100 - 200, j * 100 + 70)
             PLAYER1_BALLOONS.append(balloon)
 
@@ -183,7 +183,7 @@ def setup_balloons():
             balloon = turtle.Turtle()
             balloon.up()
             balloon.speed(10)
-            balloon.shape('balloon1.gif')
+            balloon.shape('Assets/balloon1.gif')
             balloon.goto(x * 100 + 200, j * 100 + 70)
             PLAYER2_BALLOONS.append(balloon)
 
@@ -206,7 +206,7 @@ for i in range(10):
     b = turtle.Turtle()
     b.up()
     b.speed(10)
-    b.shape('bullet_count (2).gif')
+    b.shape('Assets/bullet_count (2).gif')
     b.goto(-300 + i * 20, -325)
     bullets1.append(b)
 
@@ -214,7 +214,7 @@ for i in range(10):
     b = turtle.Turtle()
     b.up()
     b.speed(10)
-    b.shape('bullet_count (2).gif')
+    b.shape('Assets/bullet_count (2).gif')
     b.goto(100 + i * 20, -325)
     bullets2.append(b)
 #################################
@@ -319,7 +319,7 @@ def game_over() -> None:
         font=("Courier New", 20, "normal")
     )
     winner = turtle.Turtle()
-    winner.shape('winner.gif')
+    winner.shape('Assets/winner.gif')
     winner.up()
     if PLAYER_1_SCORE > PLAYER_2_SCORE:
         winner.goto(player1.pos())
@@ -360,14 +360,14 @@ def shoot() -> None:
     explosion = turtle.Turtle()
     explosion.up()
     explosion.ht()
-    explosion.shape('kaboom.gif')
+    explosion.shape('Assets/kaboom.gif')
     #######################
 
     # Plus1 animation #
     plus1 = turtle.Turtle()
     plus1.up()
     plus1.ht()
-    plus1.shape('plus_1.gif')
+    plus1.shape('Assets/plus_1.gif')
     ####################
 
     ray.ht()
