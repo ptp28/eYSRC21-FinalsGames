@@ -6,10 +6,10 @@ from time import sleep
 
 # Global Variables
 # Registering the shapes
-t.register_shape('falcon.gif')
-t.register_shape('tie_fighter_1gif.gif')
-t.register_shape('tie_fighter_2gif.gif')
-t.register_shape('pixel_laser_green.gif')
+t.register_shape('Assets/falcon.gif')
+t.register_shape('Assets/tie_fighter_1gif.gif')
+t.register_shape('Assets/tie_fighter_2gif.gif')
+t.register_shape('Assets/pixel_laser_green.gif')
 
 # Lives, score etc.
 score = 0
@@ -20,7 +20,7 @@ wavelength = 5
 
 # Player
 player_ship = t.Turtle()
-player_ship.shape('falcon.gif')
+player_ship.shape('Assets/falcon.gif')
 
 # Pen
 font = ('Courier', 20, '')  # Global font
@@ -65,7 +65,7 @@ def shoot():  # Shooting Bullets
     main_laser.speed(0)
     main_laser.pu()
     main_laser.goto(player_ship.xcor(), player_ship.ycor())  # To ensure that the bullet stays with the ship
-    main_laser.shape('pixel_laser_green.gif')
+    main_laser.shape('Assets/pixel_laser_green.gif')
 
     shot_laser = main_laser.clone()  # Cloning our main bullet
     shot_laser.speed = 170  # Speed of our bullet
@@ -106,7 +106,7 @@ def screen_setup():
     win.setup(800, 600)
     win.setworldcoordinates(-400, -300, 400, 300)
     win.title('Star Wars: Space Shooter')
-    win.bgpic('deathstar.gif')
+    win.bgpic('Assets/deathstar.gif')
 
     # Player pre-initialization
     player_ship.speed(0)
@@ -138,7 +138,7 @@ def triggers():
 def enemy_ships():
     global enemies, lives, win
     enemies = []  # List of enemies
-    enemy_sprites = ['tie_fighter_1gif.gif', 'tie_fighter_2gif.gif']  # List of enemy ship shapes
+    enemy_sprites = ['Assets/tie_fighter_1gif.gif', 'Assets/tie_fighter_2gif.gif']  # List of enemy ship shapes
 
     for enemy in range(enemy_count):  # Making our enemies
         enemy = t.Turtle()
@@ -178,9 +178,9 @@ def enemy_ships():
                     t.exitonclick()
 
 
-if __name__ == '__main__':  # Main
-    t.delay(20)  # Optimal delay for our game
-    screen_setup()
-    triggers()
-    enemy_ships()
-    t.mainloop()
+
+t.delay(20)  # Optimal delay for our game
+screen_setup()
+triggers()
+enemy_ships()
+t.mainloop()
