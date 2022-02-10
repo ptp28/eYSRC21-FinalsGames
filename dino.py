@@ -9,8 +9,7 @@ import time  # For time.time
 import multiprocessing  # To play sound in thread to stop it as required
 import os
 import urllib.request
-from sys import platform
-import sys
+from sys import platform, exit
 
 try:
     from playsound import playsound  # To play sound effects
