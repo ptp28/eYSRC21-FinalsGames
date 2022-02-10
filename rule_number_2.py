@@ -20,10 +20,10 @@ display_surface = pygame.display.set_mode((width,height))
 pygame.display.set_caption('Space invader1')
 
 # create a surface object, image is drawn on it.
-image = pygame.image.load('rules2.jpg')
+image = pygame.image.load('Assets/rules2.jpg')
 
 # Loading the song
-pygame.mixer.music.load("Recording (4).mp3")
+pygame.mixer.music.load("Assets/Recording (4).mp3")
 
 # Setting the volume
 pygame.mixer.music.set_volume(0.7)
@@ -40,6 +40,6 @@ display_surface.blit(image, (0, 0))
 
 
 pygame.display.update()
-time.sleep(55)
+time.sleep(45)
 quit()
 pygame.quit()

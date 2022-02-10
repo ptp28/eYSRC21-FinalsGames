@@ -6,7 +6,8 @@ import time
 pygame.init() # initiate pygame and give permission
 pygame.mixer.init() # to use pygame's functionality.
 
-
+# set the pygame window name
+pygame.display.set_caption('thank you')
 # define the RGB value
 # for white colour
 white = (255, 255, 255)
@@ -15,7 +16,7 @@ white = (255, 255, 255)
 width = 931
 height = 502
 display_surface = pygame.display.set_mode((width,height))
-image1 = pygame.image.load('my_.gif')
+image1 = pygame.image.load('Assets/my_.gif')
 display_surface.fill(white)
 display_surface.blit(image1, (0, 0))
 pygame.display.update()
@@ -26,13 +27,12 @@ time.sleep(4)
 # of specific dimension..enemys(X, Y).
 display_surface = pygame.display.set_mode((width,height))
 
-# set the pygame window name
-pygame.display.set_caption('thank you')
+
 
 # create a surface object, image is drawn on it.
-image = pygame.image.load('Thank_You.gif')
+image = pygame.image.load('Assets/Thank_You.gif')
 
-pygame.mixer.music.load("Thank_you.mp3")
+pygame.mixer.music.load("Assets/Thank_you.mp3")
 
 # Setting the volume
 pygame.mixer.music.set_volume(0.7)

@@ -24,10 +24,10 @@ display_surface = pygame.display.set_mode((width,height))
 pygame.display.set_caption('planet Explorer')
 
 # create a surface object, image is drawn on it.
-image = pygame.image.load('rules1.jpg')
+image = pygame.image.load('Assets/rules1.jpg')
 
 # Loading the song
-pygame.mixer.music.load("Recording (2).mp3")
+pygame.mixer.music.load("Assets/Recording (2).mp3")
 
 # Setting the volume
 pygame.mixer.music.set_volume(0.7)
@@ -45,7 +45,7 @@ display_surface.blit(image, (0, 0))
 
 
 pygame.display.update()
-time.sleep(75)
+time.sleep(70)
 quit()
 pygame.quit()
 

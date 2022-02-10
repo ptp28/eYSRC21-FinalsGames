@@ -14,12 +14,12 @@ if __name__ == '__main__': # Run the code when the py file is called
         global screen # Making the screen object as global variable
         screen = turtle.Screen() # Making a screen object for control the screen
         screen.title("Space Invaders 1") # Setting the screen title
-        screen.bgpic("space4.gif") # Setting the background colour
+        screen.bgpic("Assets/space4.gif") # Setting the background colour
         screen.setup(800,650) # Setting the screen size
 
-        turtle.register_shape("ufo_real.gif")  # Register the shape
-        turtle.register_shape("bullet.gif")
-        turtle.register_shape("rocket ship.gif")
+        turtle.register_shape("Assets/ufo_real.gif")  # Register the shape
+        turtle.register_shape("Assets/bullet.gif")
+        turtle.register_shape("Assets/rocket ship.gif")
     def draw_border(): # Drawing border
 
         border_pen = turtle.Turtle() # making a pen to draw a border
@@ -51,7 +51,7 @@ if __name__ == '__main__': # Run the code when the py file is called
 
         player = turtle.Turtle() # Making a player object for playing
 
-        player.shape("rocket ship.gif") # setting the player shape as rocket
+        player.shape("Assets/rocket ship.gif") # setting the player shape as rocket
         player.penup()
         player.speed(0)
         player.setposition(0, -250) # setting the player position
@@ -68,7 +68,7 @@ if __name__ == '__main__': # Run the code when the py file is called
             enemies.append(turtle.Turtle())#Apending all enemy object to the list
 
         for enemy in enemies: # iterating all the enemy object in enemies list
-            enemy.shape("ufo_real.gif") # setting the shape
+            enemy.shape("Assets/ufo_real.gif") # setting the shape
             enemy.penup()
             enemy.speed(0) # speed to maximum
             x = random.randint(-200, 200) # getting random values for x
@@ -84,7 +84,7 @@ if __name__ == '__main__': # Run the code when the py file is called
         for i in range(n):
             missile = turtle.Turtle() # creating the missile object
             missile.color("blue")
-            missile.shape("bullet.gif")
+            missile.shape("Assets/bullet.gif")
             missile.speed = 1
             missile.state = "ready" # setting the missile state to ready
             missile.hideturtle() # hide the missile turtle
@@ -100,7 +100,7 @@ if __name__ == '__main__': # Run the code when the py file is called
     int_enemies() # calling the int enemies function
     int_player() # calling the int player function
     int_missel(5) # calling the int missel function
-    playsound.playsound('Game_start.mp3') #playing the sound
+    playsound.playsound('Assets/Game_start.mp3') #playing the sound
 
     def move_left(): # Move the player to left
         x = player.xcor()
@@ -180,7 +180,7 @@ if __name__ == '__main__': # Run the code when the py file is called
 
             for missile in missiles:
                 if missile.distance(enemy)<60: # check for a collision between the bullet and the enemy
-                    playsound.playsound('hit_2_sound.mp3',False) # playing the song
+                    playsound.playsound('Assets/hit_2_sound.mp3',False) # playing the song
                     #Reseting the missile
                     # missile.goto(600, 600)
                     missile.hideturtle()

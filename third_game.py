@@ -10,7 +10,7 @@ def game3():
         screen.setup(width=800, height=600)
         screen.title("Space Invader 2")
         screen.bgcolor("black")
-        screen.bgpic("space4.gif")
+        screen.bgpic("Assets/space4.gif")
         # Stop screen updates
         screen.tracer(0)
 
@@ -18,7 +18,6 @@ def game3():
         # Register Shapes
         player1_vertices =((0,25),(-15,0),(-18,5),(-18,-5),(0,-10),(18,-5),(18, 5),(15, 0))
         screen.register_shape("space jet1.gif", player1_vertices)
-        screen.register_shape("bullet.gif")
         player_vertices = (
         (-111, 94), (-120, 48), (-124, 35), (-127, 19), (-128, 10), (-171, -15), (-174, -28), (-153, -37), (-129, -22),
         (-127, -30), (-144, -41), (-137, -54), (-122, -49), (-120, -42), (-102, -42), (-103, -51), (-85, -54), (-78, -43),
@@ -30,7 +29,8 @@ def game3():
         (47, 26), (48, 21), (90, -9), (92, -16), (100, -48), (111, -94))
         screen.register_shape("space jet2.gif", player2_vertices)
 
-        screen.register_shape("ufo2.gif")
+        screen.register_shape("Assets/ufo2.gif")
+        screen.register_shape("Assets/bullet.gif")
 
     def int_player(): # initialising the player
         global player,player1,player2# Initialising the player
@@ -89,7 +89,7 @@ def game3():
             ufo.color("brown")
             ufo.speed(0)
             ufo.penup()
-            ufo.shape("ufo2.gif")
+            ufo.shape("Assets/ufo2.gif")
             ufo.speed = random.randint(2, 3) / 30
             ufo.goto(0,0)
             # if rocket_ship_move == 2:
@@ -112,7 +112,7 @@ def game3():
     int_asteroid()
     int_score_pen()
     int_missile()
-    playsound.playsound('Game_start.mp3')
+    playsound.playsound('Assets/Game_start.mp3')
 
     def turn_left():
 
@@ -133,7 +133,7 @@ def game3():
     def f_missile(): # fireing the missile
         for missile in missiles:
             if missile.state == "ready":
-                playsound.playsound('Hit_sound.wav', False)
+                playsound.playsound('Assets/Hit_sound.wav', False)
 
                 missile.goto(0,0 )
                 missile.showturtle()

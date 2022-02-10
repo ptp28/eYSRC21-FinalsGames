@@ -21,10 +21,10 @@ display_surface = pygame.display.set_mode((width,height))
 pygame.display.set_caption('3d ball finder')
 
 # create a surface object, image is drawn on it.
-image = pygame.image.load('rules4.gif')
+image = pygame.image.load('Assets/rules4.gif')
 
 # Loading the song
-pygame.mixer.music.load("Rule_4.mp3")
+pygame.mixer.music.load("Assets/Rule_4.mp3")
 
 # Setting the volume
 pygame.mixer.music.set_volume(0.7)
@@ -38,6 +38,6 @@ display_surface.fill(white)
 display_surface.blit(image, (0, 0))
 
 pygame.display.update()
-time.sleep(75)
+time.sleep(64)
 quit()
 pygame.quit()
