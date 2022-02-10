@@ -46,7 +46,7 @@ if __name__ == "__main__":
         isdir = os.path.isdir(ASSETS_PATH) 
         if isdir:
             print("Loading game...")
-            import dino
+            import main
             i += 1
         else:
             print("Downloading assets...")
