@@ -262,6 +262,5 @@ def game3():
             if repeat == 'no':
                 screen.bye()
 
-# wn.mainloop()
-if __name__ == '__main__':
-    game3()
+
+game3()

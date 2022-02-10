@@ -5,15 +5,13 @@ import pygame_menu
 import os
 import webbrowser
 
-os.system('python opencv_instruction.py')
-os.system('python Start_opencv.py')
 pygame.init()
 surface = pygame.display.set_mode((800, 600))
 pygame.display.set_caption('Eysrc-Yantra School Robotics Competition (eYSRC 2021) ')
 
 def game_first():
     def play():
-        os.system('python first_game.py')
+        import first_game 
     def back():
         menu.mainloop(surface)
         return
@@ -21,7 +19,7 @@ def game_first():
         menu1.mainloop(surface)
         return
     def written_Instruction():
-        os.system('python rule_number_1.py')
+        import rule_number_1
     def demo():
         url = "https://youtu.be/swTOrxOT8aI"
         webbrowser.open(url, new=1)
@@ -75,7 +73,7 @@ def game_first():
     menu1.mainloop(surface)
 def game_second():
     def play():
-        os.system('python second_game.py')
+        import second_game
     def back():
         menu.mainloop(surface)
         return
@@ -83,7 +81,7 @@ def game_second():
         menu1.mainloop(surface)
         return
     def written_Instruction():
-        os.system('python rule_number_2.py')
+        import rule_number_2
     def demo():
         url = "https://youtu.be/iC9mBx07wg0"
         webbrowser.open(url, new=1)
@@ -133,7 +131,7 @@ def game_second():
     menu1.mainloop(surface)
 def game_third():
     def play():
-        os.system('python third_game.py')
+        import third_game
     def back():
         menu.mainloop(surface)
         return
@@ -141,7 +139,7 @@ def game_third():
         menu1.mainloop(surface)
         return
     def written_Instruction():
-        os.system('python rule_number_3.py')
+        import rule_number_3
     def demo():
         url = "https://youtu.be/zZ4NN3pxZU0"
         webbrowser.open(url, new=1)
@@ -194,7 +192,7 @@ def game_third():
     menu1.mainloop(surface)
 def game_fourth():
     def play():
-        os.system('python fourth_game.py')
+        import Fourth_game
     def back():
         menu.mainloop(surface)
         return
@@ -202,7 +200,7 @@ def game_fourth():
         menu1.mainloop(surface)
         return
     def written_Instruction():
-        os.system('python rule_number_4.py')
+        import rule_number_4
 
     def demo():
         url = "https://youtu.be/lWYIQrTnA4M"
@@ -255,7 +253,7 @@ def game_fourth():
 menu = pygame_menu.menu.Menu('Game Inventor', 800, 600,
                        theme=pygame_menu.themes.THEME_ORANGE)
 def exit():
-    os.system('python Thank_you.py')
+    import Thank_you
     quit()
 
 menu.add.button('Planet Explorer', game_first)

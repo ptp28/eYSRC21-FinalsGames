@@ -766,7 +766,6 @@ def game():
                 screen.bye()
 
 
-    # screen.mainloop()
-if __name__ == '__main__':
-    game()
+
+game()
     # exit()

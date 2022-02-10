@@ -8,7 +8,7 @@ import math # This modules is used for mathematics
 import random # Modules used for getting random values
 import playsound # Modules used for playing sound
 # | = }
-if __name__ == '__main__': # Run the code when the py file is called
+if True: # Run the code when the py file is called
     def int_screen(): # Initialisting the screen
         turtle.tracer(0)
         global screen # Making the screen object as global variable
