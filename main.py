@@ -271,7 +271,7 @@ def score_guy():
     pen.hideturtle()
     pen.goto(304, 300)
     pen.color('red')
-    pen.write(f'TEAM #63             Score: {score}', align='right', font=('Courier', 25, 'bold'))
+    pen.write(f'                     Score: {score}', align='right', font=('Courier', 25, 'bold'))
 
 
 # Function for when the player wins
