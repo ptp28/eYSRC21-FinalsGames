@@ -4,64 +4,68 @@ import turtle
 import time
 import random
 import sys
-import winsound
+try:
+    import winsound
+except:
+    winsound = None
+    print("Cannot play sound")
 
 #Setting up turtle screen
 screen = turtle.Screen()
 screen.setup(800,700)
 screen.setworldcoordinates(-400,-400,400,400)
-
-winsound.PlaySound("intro_music.wav", winsound.SND_ASYNC)
+if winsound:
+    winsound.PlaySound("./Assets/audio/intro_music.wav", winsound.SND_ASYNC)
 
 # intro animation 1
-turtle.addshape("yc.gif")
-turtle.addshape("yc(1).gif")
-turtle.addshape("yc(2).gif")
-turtle.addshape("yc(3).gif")
-turtle.addshape("yc(4).gif")
-turtle.addshape("yc(5).gif")
-turtle.addshape("yc(6).gif")
-turtle.addshape("yc(7).gif")
-turtle.shape("yc.gif")
+turtle.addshape("./Assets/intro_1/yc.gif")
+turtle.addshape("./Assets/intro_1/yc(1).gif")
+turtle.addshape("./Assets/intro_1/yc(2).gif")
+turtle.addshape("./Assets/intro_1/yc(3).gif")
+turtle.addshape("./Assets/intro_1/yc(4).gif")
+turtle.addshape("./Assets/intro_1/yc(5).gif")
+turtle.addshape("./Assets/intro_1/yc(6).gif")
+turtle.addshape("./Assets/intro_1/yc(7).gif")
+turtle.shape("./Assets/intro_1/yc.gif")
 time.sleep(0.1)
-turtle.shape("yc(1).gif")
+turtle.shape("./Assets/intro_1/yc(1).gif")
 time.sleep(0.1)
-turtle.shape("yc(2).gif")
+turtle.shape("./Assets/intro_1/yc(2).gif")
 time.sleep(0.1)
-turtle.shape("yc(3).gif")
+turtle.shape("./Assets/intro_1/yc(3).gif")
 time.sleep(0.1)
-turtle.shape("yc(4).gif")
+turtle.shape("./Assets/intro_1/yc(4).gif")
 time.sleep(0.1)
-turtle.shape("yc(5).gif")
+turtle.shape("./Assets/intro_1/yc(5).gif")
 time.sleep(0.1)
-turtle.shape("yc(6).gif")
+turtle.shape("./Assets/intro_1/yc(6).gif")
 time.sleep(0.1)
-turtle.shape("yc(7).gif")
+turtle.shape("./Assets/intro_1/yc(7).gif")
 time.sleep(2)
 
 # intro animation 2
-turtle.addshape("RoboRescue_main.gif")
-turtle.addshape("RoboRescue_main (5).gif")
-turtle.addshape("RoboRescue_main (4).gif")
-turtle.addshape("RoboRescue_main (3).gif")
-turtle.addshape("RoboRescue_main (2).gif")
-turtle.addshape("RoboRescue_main (1).gif")
-turtle.shape("RoboRescue_main (5).gif")
+turtle.addshape("./Assets/intro_2/RoboRescue_main.gif")
+turtle.addshape("./Assets/intro_2/RoboRescue_main (5).gif")
+turtle.addshape("./Assets/intro_2/RoboRescue_main (4).gif")
+turtle.addshape("./Assets/intro_2/RoboRescue_main (3).gif")
+turtle.addshape("./Assets/intro_2/RoboRescue_main (2).gif")
+turtle.addshape("./Assets/intro_2/RoboRescue_main (1).gif")
+turtle.shape("./Assets/intro_2/RoboRescue_main (5).gif")
 time.sleep(0.1)
-turtle.shape("RoboRescue_main (4).gif")
+turtle.shape("./Assets/intro_2/RoboRescue_main (4).gif")
 time.sleep(0.1)
-turtle.shape("RoboRescue_main (3).gif")
+turtle.shape("./Assets/intro_2/RoboRescue_main (3).gif")
 time.sleep(0.1)
-turtle.shape("RoboRescue_main (2).gif")
+turtle.shape("./Assets/intro_2/RoboRescue_main (2).gif")
 time.sleep(0.1)
-turtle.shape("RoboRescue_main (1).gif")
+turtle.shape("./Assets/intro_2/RoboRescue_main (1).gif")
 time.sleep(0.1)
-turtle.shape("RoboRescue_main.gif")
+turtle.shape("./Assets/intro_2/RoboRescue_main.gif")
 time.sleep(0.1)
 screen.update()
 time.sleep(2)
 screen.clear()
-screen.bgpic("paper.gif")
+screen.bgpic("./Assets/general/paper.gif")
 
 # initializing turtles for game2()
 hammer = turtle.Turtle()
@@ -71,10 +75,10 @@ note = turtle.Turtle()
 notemaker = turtle.Turtle()
 
 #initializing turtles for skip
-turtle.addshape("quit.gif")
-turtle.addshape("Skip.gif")
+turtle.addshape("./Assets/general/quit.gif")
+turtle.addshape("./Assets/general/Skip.gif")
 skipT = turtle.Turtle()
-skipT.shape("Skip.gif")
+skipT.shape("./Assets/general/Skip.gif")
 skipT.ht()
 skipT.pu()
 skipT.goto(-350, -382)
@@ -82,7 +86,7 @@ skipT.st()
 
 #initializing turtles for exit
 exitT = turtle.Turtle()
-exitT.shape("quit.gif")
+exitT.shape("./Assets/general/quit.gif")
 exitT.ht()
 exitT.pu()
 exitT.goto(350, -382)
@@ -169,7 +173,7 @@ def locate(pos):
 
     if pos == 1:
         map_marker.goto(250, 200)
-        screen.bgpic("Map.gif")
+        screen.bgpic("./Assets/general/Map.gif")
         map_marker.st()
         map_marker.pd()
         map_marker.pensize(5)
@@ -183,7 +187,7 @@ def locate(pos):
         map_marker.goto(-235, -15)
         map_marker.right(180)
         map_marker.pd()
-        screen.bgpic("Map.gif")
+        screen.bgpic("./Assets/general/Map.gif")
         map_marker.st()
         map_marker.clear()
         map_marker.right(180)
@@ -198,7 +202,7 @@ def locate(pos):
         map_marker.goto(20, 230)
         map_marker.left(180)
         map_marker.pd()
-        screen.bgpic("Map.gif")
+        screen.bgpic("./Assets/general/Map.gif")
         map_marker.st()
         map_marker.clear()
         map_marker.right(180)
@@ -215,7 +219,7 @@ intro function displays the storyline in the beggining of the game.
 def intro():
     global skipflag,player_name
 
-    screen.bgpic("paper.gif")
+    screen.bgpic("./Assets/general/paper.gif")
     player_name = turtle.textinput("Enter player's name","What's your character's name?")# getting players name
 
     story =[["Dear Diary,",str(player_name) + " here!! "," After all these years today is the day I will achieve my dream.", " I have always wanted to build my own robot." , "And I will finally do it with e-yan today." , "I have built him from scratch, and today I just have to charge him." , "Will update what happened later.","Bye "],
@@ -236,7 +240,7 @@ def intro():
 
     for plot in range(0,2):
         screen.clear()
-        screen.bgpic("prof1.gif")
+        screen.bgpic("./Assets/general/prof1.gif")
         write(story[plot+2], coordinates[coord], coordinates[coord + 1], coordinates[coord + 2], "black","Book Antiqua","normal",13,0)
 
         coord += 3
@@ -255,7 +259,8 @@ def game1(image):
     name = screen.textinput("Now we have to collect the wires", "Enter the name of the online shopping site whose logo is displayed")
     #If the answer entered by the player is equal to the answer in the same list in the index 1, it exits the function
     if name.lower() == image[0][1]:
-        winsound.PlaySound("win.wav", winsound.SND_ASYNC)
+        if winsound:
+            winsound.PlaySound("./Assets/audio/win.wav", winsound.SND_ASYNC)
         image.remove(image[0])
         turtle.ht()
         turtle.pu()
@@ -269,11 +274,13 @@ def game1(image):
         #If the answer entered by the player is not same it gives the player three chances. After three chances it exits from the game
         image.remove(image[0])
         if len(image) < 3:
-            winsound.PlaySound("mario_dies.wav", winsound.SND_ASYNC)
+            if winsound:
+                winsound.PlaySound("./Assets/audio/mario_dies.wav", winsound.SND_ASYNC)
             plot = ["Unfortunately you could not guess any of the sites ...", "Better luck saving e-yan next time"]
             write(plot, -320, -40, -200, "navy", "Book Antiqua", "bold", 20, 0)
             choice()
-        winsound.PlaySound("wrong.wav", winsound.SND_ASYNC)
+        if winsound:
+            winsound.PlaySound("./Assets/audio/wrong.wav", winsound.SND_ASYNC)
         plot = ["Unfortunately you could not guess the site... ","lets move on to the next site"]
         write(plot, -320, -40, -200, "navy", "Book Antiqua", "bold",20,0)
         game1(image)
@@ -288,13 +295,13 @@ def game2():
     shuffle = turtle.Turtle()
     shuffle.ht()
     shuffle.pu()
-    turtle.addshape("shuffle.gif")
-    shuffle.shape("shuffle.gif")
+    turtle.addshape("./Assets/game_2/shuffle.gif")
+    shuffle.shape("./Assets/game_2/shuffle.gif")
     shuffle.goto(-350, -290)
     shuffle.st()
 
     exitT = turtle.Turtle()
-    exitT.shape("quit.gif")
+    exitT.shape("./Assets/general/quit.gif")
     exitT.ht()
     exitT.pu()
     exitT.goto(100, -300)
@@ -304,10 +311,10 @@ def game2():
     tape.ht()
     spanner.ht()
 
-    screen.bgpic("BG.gif")
+    screen.bgpic("./Assets/game_2/BG.gif")
     screen.tracer()
-    turtle.addshape("note (1).gif")
-    note.shape("note (1).gif")
+    turtle.addshape("./Assets/game_2/note (1).gif")
+    note.shape("./Assets/game_2/note (1).gif")
     note.st()
     note.pu()
     note.goto(280,-270)
@@ -324,8 +331,8 @@ def game2():
 
     if flag10 != 1:# if hammer is not clicked
         #initializing hammer turtle
-        turtle.addshape("hammer (1).gif")
-        hammer.shape("hammer (1).gif")
+        turtle.addshape("./Assets/game_2/hammer (1).gif")
+        hammer.shape("./Assets/game_2/hammer (1).gif")
         hammer.shapesize(5)
         hammer.pu()
         hammer.ht()
@@ -334,8 +341,8 @@ def game2():
 
     if flag12 != 1:# if tape is not clicked
         #initializing tape turtle
-        turtle.addshape("tape.gif")
-        tape.shape("tape.gif")
+        turtle.addshape("./Assets/game_2/tape.gif")
+        tape.shape("./Assets/game_2/tape.gif")
         tape.shapesize(1)
         tape.pu()
         tape.ht()
@@ -344,26 +351,26 @@ def game2():
 
     if flag11 != 1:# if spanner is not clicked
         #initializing spanner turtle
-        turtle.addshape("spanner.gif")
-        spanner.shape("spanner.gif")
+        turtle.addshape("./Assets/game_2/spanner.gif")
+        spanner.shape("./Assets/game_2/spanner.gif")
         spanner.shapesize(1)
         spanner.pu()
         spanner.ht()
         spanner.goto(spanner_cors)
         spanner.st()
 
-    turtle.addshape("tick.gif")
+    turtle.addshape("./Assets/game_2/tick.gif")
 
     correct = turtle.Turtle()
-    correct.shape("tick.gif")
+    correct.shape("./Assets/game_2/tick.gif")
     correct.ht()
 
     correct1 = turtle.Turtle()
-    correct1.shape("tick.gif")
+    correct1.shape("./Assets/game_2/tick.gif")
     correct1.ht()
 
     correct2 = turtle.Turtle()
-    correct2.shape("tick.gif")
+    correct2.shape("./Assets/game_2/tick.gif")
     correct2.ht()
 
     screen.update()
@@ -374,7 +381,8 @@ def game2():
     def checkforWin():
         global win_check,ans
         if win_check > 2:
-            winsound.PlaySound("win.wav", winsound.SND_ASYNC)
+            if winsound:
+                winsound.PlaySound("./Assets/audio/win.wav", winsound.SND_ASYNC)
             ans = 1
 
 
@@ -383,7 +391,8 @@ def game2():
     """
     def isHammerFound(x,y):
         global flag, win_check,flag10
-        winsound.PlaySound("correct.wav", winsound.SND_ASYNC)
+        if winsound:
+            winsound.PlaySound("./Assets/audio/correct.wav", winsound.SND_ASYNC)
         flag = 1
         flag10 = 1
         win_check = win_check + 1
@@ -398,7 +407,8 @@ def game2():
     """
     def isSpannerFound(x,y):
         global flag, win_check,flag11
-        winsound.PlaySound("correct.wav", winsound.SND_ASYNC)
+        if winsound:
+            winsound.PlaySound("./Assets/audio/correct.wav", winsound.SND_ASYNC)
         flag = 2
         flag11 = 1
         win_check = win_check + 1
@@ -413,7 +423,8 @@ def game2():
     """
     def isTapeFound(x,y):
         global flag, win_check,flag12
-        winsound.PlaySound("correct.wav", winsound.SND_ASYNC)
+        if winsound:
+            winsound.PlaySound("./Assets/audio/correct.wav", winsound.SND_ASYNC)
         flag = 3
         flag12 = 1
         win_check = win_check + 1
@@ -430,7 +441,8 @@ def game2():
     def isScreenTouching(x,y):
         global flag
         if flag < 1:
-            winsound.PlaySound("click.wav", winsound.SND_ASYNC)
+            if winsound:
+                winsound.PlaySound("./Assets/audio/click.wav", winsound.SND_ASYNC)
 
     def isShufflePressed(x,y):
         game2()
@@ -469,7 +481,7 @@ This function is the third sub game of the plot...Unscramble the words
 def game3(flag1,word,order):
 
     screen.clear()
-    screen.bgpic("roboBackground.png")
+    screen.bgpic("./Assets/game_3/roboBackground.png")
     turtle.pu()
     turtle.ht()
     word1 = [["s", "e", "n", "s", "o", "r"], "sensor"]#nested list of the letters and answer of 1st word
@@ -494,7 +506,8 @@ def game3(flag1,word,order):
     # If the answer entered by the player is equal to the answer in the same list at index position 1, it returns from the function
     if ans.lower() == str(word[1]):
         #turtle.clear()
-        winsound.PlaySound("correct .wav", winsound.SND_ASYNC)
+        if winsound:
+            winsound.PlaySound("./Assets/audio/correct .wav", winsound.SND_ASYNC)
         turtle.goto(0, 0)
         plot = ["Great job!! You got the right answer.", "You got the motors"]
         write(plot, -330, 100, -230, "navy", "Book Antiqua", "bold", 20, 0)
@@ -503,11 +516,13 @@ def game3(flag1,word,order):
     # if the answer entered by the player is not equal to the answer in the same list it rewrites the same word in different order. This goes on for three chances and then breaks from the game loop
     if ans.lower() != str(word[1]):
         #turtle.clear()
-        winsound.PlaySound("wrong.wav", winsound.SND_ASYNC)
+        if winsound:
+            winsound.PlaySound("./Assets/audio/wrong.wav", winsound.SND_ASYNC)
         turtle.goto(0, 0)
         flag1 += 1
         if flag1 == 3:
-            winsound.PlaySound("mario_dies.wav", winsound.SND_ASYNC)
+            if winsound:
+                winsound.PlaySound("./Assets/audio/mario_dies.wav", winsound.SND_ASYNC)
             plot = ["Unfortunately you could not guess the word ...", "Better luck saving e-yan next time"]
             write(plot, -350, 100, -230, "navy", "Book Antiqua", "bold", 20, 0)
             choice()
@@ -522,39 +537,39 @@ This function is the 4th sub game of the plot ... drag and drop.
 def game4(show,wires ,tools,motor):
     global player_name,flag2
     screen.tracer()
-    screen.bgpic("game4.png")
+    screen.bgpic("./Assets/game_4/game4.png")
     turtle.penup()
     turtle.goto(0,190)
     if show == 0:
 
         # adding various gifs
-        turtle.addshape("empty_bar.gif")
-        turtle.addshape("half_bar.gif")
-        turtle.addshape("little_bar.gif")
-        turtle.addshape("full_bar.gif")
-        turtle.addshape("e-yan.gif")
-        turtle.addshape("e-yan1.gif")
-        turtle.addshape("e-yan2.gif")
-        turtle.addshape("e-yan3.gif")
-        turtle.addshape("Wires.gif")
-        turtle.addshape("Toolbox.gif")
-        turtle.addshape("Motors.gif")
-        turtle.shape("e-yan.gif")
+        turtle.addshape("./Assets/game_4/empty_bar.gif")
+        turtle.addshape("./Assets/game_4/half_bar.gif")
+        turtle.addshape("./Assets/game_4/little_bar.gif")
+        turtle.addshape("./Assets/game_4/full_bar.gif")
+        turtle.addshape("./Assets/game_4/e-yan.gif")
+        turtle.addshape("./Assets/game_4/e-yan1.gif")
+        turtle.addshape("./Assets/game_4/e-yan2.gif")
+        turtle.addshape("./Assets/game_4/e-yan3.gif")
+        turtle.addshape("./Assets/game_4/Wires.gif")
+        turtle.addshape("./Assets/game_4/Toolbox.gif")
+        turtle.addshape("./Assets/game_4/Motors.gif")
+        turtle.shape("./Assets/game_4/e-yan.gif")
 
         #initializing wires turtle
-        wires.shape("Wires.gif")
+        wires.shape("./Assets/game_4/Wires.gif")
         wires.pu()
         wires.goto(260, 150)
         wires.st()
 
         #initializing tools turtle
-        tools.shape("Toolbox.gif")
+        tools.shape("./Assets/game_4/Toolbox.gif")
         tools.pu()
         tools.goto(240, -90)
         tools.st()
 
         # initializing motor turtle
-        motor.shape("Motors.gif")
+        motor.shape("./Assets/game_4/Motors.gif")
         motor.pu()
         motor.goto(-260, -90)
         motor.st()
@@ -564,7 +579,7 @@ def game4(show,wires ,tools,motor):
 
         # initializing health_bar turtle
         health_bar.pu()
-        health_bar.shape("empty_bar.gif")
+        health_bar.shape("./Assets/game_4/empty_bar.gif")
         health_bar.goto(0, -315)
 
         # initializing instructor turtle
@@ -576,7 +591,7 @@ def game4(show,wires ,tools,motor):
         screen.update()
     #If flag is equal to 0 then, empty_bar.gif is set as the pic for health_bar turtle
     if flag2 == 0:
-        health_bar.shape("empty_bar.gif")
+        health_bar.shape("./Assets/game_4/empty_bar.gif")
         screen.update()
         instructor.clear()
         instructor.write("Instructions:" + "Drag and drop the tools for eYan to be fixed",
@@ -585,8 +600,8 @@ def game4(show,wires ,tools,motor):
 
     # If flag is equal to 1 then, little_bar.gif is set as the pic for health_bar turtle
     if flag2 == 1:
-        turtle.shape("e-yan1.gif")
-        health_bar.shape("little_bar.gif")
+        turtle.shape("./Assets/game_4/e-yan1.gif")
+        health_bar.shape("./Assets/game_4/little_bar.gif")
         screen.update()
         instructor.clear()
         instructor.write("Nice", font=("calibri", 30, "normal"), align="center")
@@ -594,8 +609,8 @@ def game4(show,wires ,tools,motor):
 
     # If flag is equal to 2 then, half_bar.gif is set as the pic for health_bar turtle
     if flag2 == 2:
-        turtle.shape("e-yan2.gif")
-        health_bar.shape("half_bar.gif")
+        turtle.shape("./Assets/game_4/e-yan2.gif")
+        health_bar.shape("./Assets/game_4/half_bar.gif")
         screen.update()
         instructor.clear()
         instructor.write("very Nice", font=("caibri", 30, "normal"), align="center")
@@ -603,8 +618,8 @@ def game4(show,wires ,tools,motor):
 
     # If flag is equal to 3 then, full_bar.gif is set as the pic for health_bar turtle and flag is incremented by 1
     if flag2 == 3:
-        turtle.shape("e-yan3.gif")
-        health_bar.shape("full_bar.gif")
+        turtle.shape("./Assets/game_4/e-yan3.gif")
+        health_bar.shape("./Assets/game_4/full_bar.gif")
         screen.update()
         instructor.clear()
         instructor.write("You're all done!!!",
@@ -683,7 +698,7 @@ def game4(show,wires ,tools,motor):
 end function displays the ending plot of the game
 """
 def end():
-    screen.bgpic("paper.gif")
+    screen.bgpic("./Assets/general/paper.gif")
     plot = ["And this is how I was able to achieve my dream."," My robot, E-yan is now a fully functional robot and is helping many students"," with school-based tutoring in subjects such as math and science."," This journey of mine has been very memorable to me and I wanted to keep a"," record  of it, hence I have written this diary."," I will write again when another journey comes up. Until then,","Goodbye Dear Diary"]
     write(plot,-375,100,-375, "blue", "Lucida Handwriting","italic", 13, 0)
     screen.clear()
@@ -693,30 +708,31 @@ def end():
 outro function displays the ending animation of the game
 """
 def outro():
-    winsound.PlaySound("outro_music.wav", winsound.SND_ASYNC)
-    turtle.addshape("cy.gif")
-    turtle.addshape("cy(1).gif")
-    turtle.addshape("cy(2).gif")
-    turtle.addshape("cy(3).gif")
-    turtle.addshape("cy(4).gif")
-    turtle.addshape("cy(5).gif")
-    turtle.addshape("cy(6).gif")
-    turtle.addshape("cy(7).gif")
-    turtle.shape("cy.gif")
+    if winsound:
+        winsound.PlaySound("./Assets/audio/outro_music.wav", winsound.SND_ASYNC)
+    turtle.addshape("./Assets/outro/cy.gif")
+    turtle.addshape("./Assets/outro/cy(1).gif")
+    turtle.addshape("./Assets/outro/cy(2).gif")
+    turtle.addshape("./Assets/outro/cy(3).gif")
+    turtle.addshape("./Assets/outro/cy(4).gif")
+    turtle.addshape("./Assets/outro/cy(5).gif")
+    turtle.addshape("./Assets/outro/cy(6).gif")
+    turtle.addshape("./Assets/outro/cy(7).gif")
+    turtle.shape("./Assets/outro/cy.gif")
     time.sleep(2)
-    turtle.shape("cy(1).gif")
+    turtle.shape("./Assets/outro/cy(1).gif")
     time.sleep(0.1)
-    turtle.shape("cy(2).gif")
+    turtle.shape("./Assets/outro/cy(2).gif")
     time.sleep(0.1)
-    turtle.shape("cy(3).gif")
+    turtle.shape("./Assets/outro/cy(3).gif")
     time.sleep(0.1)
-    turtle.shape("cy(4).gif")
+    turtle.shape("./Assets/outro/cy(4).gif")
     time.sleep(0.1)
-    turtle.shape("cy(5).gif")
+    turtle.shape("./Assets/outro/cy(5).gif")
     time.sleep(0.1)
-    turtle.shape("cy(6).gif")
+    turtle.shape("./Assets/outro/cy(6).gif")
     time.sleep(0.1)
-    turtle.shape("cy(7).gif")
+    turtle.shape("./Assets/outro/cy(7).gif")
     time.sleep(1)
 
 """
@@ -749,13 +765,12 @@ def main():
     order = ""
     flag1 = 0  # flag is used in game3 to find the number of turns the player has played
     word = ""  # to store the random selection in game 3
-    image = [["amazon.gif", "amazon"], ["snapdeal.gif", "snapdeal"], ["flipkart.gif", "flipkart"],
-             ["jioMart.gif", "jio mart"], ["cliq.gif", "tata cliq"]]  # list of sites and images for game1()
-
+    image = [["./Assets/game_1/amazon.gif", "amazon"], ["./Assets/game_1/snapdeal.gif", "snapdeal"], ["./Assets/game_1/flipkart.gif", "flipkart"],
+             ["./Assets/game_1/jioMart.gif", "jio mart"], ["./Assets/game_1/cliq.gif", "tata cliq"]]  # list of sites and images for game1()
 
     locate(1)
     screen.clear()
-    screen.bgpic("board.png")
+    screen.bgpic("./Assets/general/board.png")
     plot = ["Level 1 : Guess the logo ", "Destination : Computer Lab ", "How to play?: To order the wires ,",
             "guess the name of the online shopping site through their logo  ","(If the answer has multiple words write ,"," them seperately using spaces)"]
     write(plot, -250, 100, -250, "white", "Segoe Script", "bold", 13, 0)
@@ -766,7 +781,7 @@ def main():
     screen.clear()
     locate(2)
     screen.clear()
-    screen.bgpic("board.png")
+    screen.bgpic("./Assets/general/board.png")
     plot = ["Level 2 : Find the objects ", "Destination : Mechanical Lab ",
             "How to play? : Amongst the tool mess in the mechanical lab,",
             "find the tools given in the list which are required to help e-yan"]
@@ -776,23 +791,23 @@ def main():
     game2()
     locate(3)
     screen.clear()
-    screen.bgpic("board.png")
+    screen.bgpic("./Assets/general/board.png")
     plot =["Level 3 : Unscramble The Word ","Destination : Robotics Lab ","How to play?: To obtain the motors","unscramble the word to form an equipment"]
     write(plot, -250, 100, -250, "white", "Segoe Script", "bold", 13, 0)
     game3(flag1,word,order)
     screen.clear()
 
-    screen.bgpic("prof1.gif")
+    screen.bgpic("./Assets/general/prof1.gif")
     plot = ["Well done," + str(player_name) + ".", " You have brought everything we need.",
             " Now replace the parts correctly and", " charge e-yan again."]
     write(plot, -170, 340, -170, "black", "Book Antiqua", "bold", 13, 0)
     screen.clear()
-    screen.bgpic("prof1.gif")
+    screen.bgpic("./Assets/general/prof1.gif")
     plot = [" Reduce the voltage supply this time.", " All the best," + str(player_name),
             " I just know it'll work this time."]
     write(plot, -170, 340, -170, "black", "Book Antiqua", "bold", 13, 0)
     screen.clear()
-    screen.bgpic("board.png")
+    screen.bgpic("./Assets/general/board.png")
     plot = ["Level 4 : Drag And Drop", "Destination : Robotics Lab ",
             "How to play?: Drag and drop the tools inside e-yan",
             "to finally repair him"]
@@ -801,7 +816,7 @@ def main():
     game4(0,wires,tools,motor)
     screen.clear()
     end()
-    screen.bgpic("ask.png")
+    screen.bgpic("./Assets/general/ask.png")
     choice()
 intro()
 screen.clear()
