@@ -18,7 +18,7 @@ Y = 700
 # create the display surface object
 # of specific dimension..enemys(X, Y).
 display_surface = pygame.display.set_mode((X, Y))
-image1 = pygame.image.load('Assets/Start_screen.gif')
+image1 = pygame.image.load('./Assets/Start_screen.gif')
 display_surface.fill(white)
 display_surface.blit(image1, (0, 0))
 pygame.display.update()
@@ -31,7 +31,7 @@ display_surface = pygame.display.set_mode((X+100, Y))
 pygame.display.set_caption('instruction')
 
 # create a surface object, image is drawn on it.
-image = pygame.image.load('Assets/instruction_for_opencv.gif')
+image = pygame.image.load('./Assets/instruction_for_opencv.gif')
 
 
 display_surface.fill(white)

@@ -5,18 +5,18 @@ import  random
 import playsound
 import time
 app = Ursina()
-grass_texture = load_texture('Assets/grass_block.png')
+grass_texture = load_texture('./Assets/grass_block.png')
 
-brick_texture = load_texture('Assets/brick_block.png')
+brick_texture = load_texture('./Assets/brick_block.png')
 
-sky_texture   = load_texture('Assets/skybox.png')
-arm_texture   = load_texture('Assets/arm_texture.png')
+sky_texture   = load_texture('./Assets/skybox.png')
+arm_texture   = load_texture('./Assets/arm_texture.png')
 
-winning_sound = Audio('Assets/winning.mp3',loop = True, autoplay = False)
+winning_sound = Audio('./Assets/winning.mp3',loop = True, autoplay = False)
 time1 = 3000
 time2 = 50
-punch_sound  = Audio('Assets/punch.wav',loop = False, autoplay = False)
-catch  = Audio('Assets/Catch_win.wav',loop = False, autoplay = False)
+punch_sound  = Audio('./Assets/punch.wav',loop = False, autoplay = False)
+catch  = Audio('./Assets/Catch_win.wav',loop = False, autoplay = False)
 
 block_pick = 1
 game_over_play = False
@@ -78,7 +78,7 @@ def update():
 			Throphy = Animation(gif, parent=camera.ui, origin=(0, 0), position=(0.5, 00), scale=0.60)
 			Throphy.x = 0
 			winner = True
-			playsound.playsound('Assets/Won_the_game.mp3',False)
+			playsound.playsound('./Assets/Won_the_game.mp3',False)
 
 	if y < -250:
 		quit()
@@ -182,7 +182,7 @@ for i in range(numbers_of_sphere):
 	sphere.y = random.randint(3,5)
 	sphere_list.append(sphere)
 
-playsound.playsound('Assets/Game_start.mp3')
+playsound.playsound('./Assets/Game_start.mp3')
 
 sky = Sky()
 hand = Hand()

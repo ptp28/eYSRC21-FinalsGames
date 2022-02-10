@@ -19,38 +19,38 @@ def game():
         screen.bgcolor("black")  # change the background to black
         screen.setup(width=1000, height=600)  # setting the screen width and height
         screen.tracer(0)  # Turns off the screen updates
-        screen.register_shape('Assets/rocket _up.gif')  # registering the shape
+        screen.register_shape('./Assets/rocket _up.gif')  # registering the shape
         # screen.register_shape('rocket tail.gif')  # registering the shape
         # screen.register_shape('tran.gif')  # registering the shape
-        screen.register_shape('Assets/ufotrail.gif')  # registering the shape
-        screen.register_shape('Assets/ufo.gif')  # registering the shape
-        screen.register_shape('Assets/rocket left.gif')  # registering the shape
-        screen.register_shape('Assets/rocket right.gif')  # registering the shape
-        screen.register_shape('Assets/rocket down.gif')  # registering the shape
-        screen.register_shape('Assets/asteroid1.gif')  # registering the shape
-        screen.register_shape('Assets/winner (2).gif')  # registering the shape
-        screen.register_shape('Assets/start_image.gif')  # registering the shape
+        screen.register_shape('./Assets/ufotrail.gif')  # registering the shape
+        screen.register_shape('./Assets/ufo.gif')  # registering the shape
+        screen.register_shape('./Assets/rocket left.gif')  # registering the shape
+        screen.register_shape('./Assets/rocket right.gif')  # registering the shape
+        screen.register_shape('./Assets/rocket down.gif')  # registering the shape
+        screen.register_shape('./Assets/asteroid1.gif')  # registering the shape
+        screen.register_shape('./Assets/winner (2).gif')  # registering the shape
+        screen.register_shape('./Assets/start_image.gif')  # registering the shape
 
         # screen.register_shape('rocket-space-launch-project-start-up-flying-cartoon-vector-illustration-isolated-white-background-127571950.gif')  # registering the shape
 
-        screen.register_shape('Assets/mars.gif')  # registering the shape
-        screen.register_shape('Assets/jupiter.gif')  # registering the shape
+        screen.register_shape('./Assets/mars.gif')  # registering the shape
+        screen.register_shape('./Assets/jupiter.gif')  # registering the shape
 
         # screen.register_shape('restart button.gif')  # registering the shape
 
-        screen.register_shape('Assets/neptune.gif')
+        screen.register_shape('./Assets/neptune.gif')
 
-        screen.register_shape('Assets/venus.gif')  # registering the shape
+        screen.register_shape('./Assets/venus.gif')  # registering the shape
         screen_width = 860  # setting a variable for screen width
         screen_height = 460  # setting a variable for screen heigh
         # Sleeping for 8 sec
-        screen.bgpic('Assets/space4.gif')  # changing the background image
+        screen.bgpic('./Assets/space4.gif')  # changing the background image
 
     def int_player(): # intilising the player
         global player
         player = turtle.Turtle()  # creating an object for player
         player.speed(0)  # setting the speed to maximum
-        player.shape("Assets/rocket _up.gif")  # changing the shape
+        player.shape("./Assets/rocket _up.gif")  # changing the shape
         player.color("grey")  # setting the colour as grey
         player.penup()  # stop writing on the screen
 
@@ -63,14 +63,14 @@ def game():
         global planet,planet1,planet2,planet3
         planet = turtle.Turtle()  # creating a object for planet
         planet.speed(0)  # setting the speed as maximum
-        planet.shape('Assets/mars.gif')  # setting the shape
+        planet.shape('./Assets/mars.gif')  # setting the shape
         planet.color("red")  # setting the colour as red
         planet.penup()
         planet.goto(0, 100)
 
         planet1 = turtle.Turtle()  # creating a object for planet1
         planet1.speed(0)  # setting the speed as maximum
-        planet1.shape("Assets/jupiter.gif")  # setting the shape
+        planet1.shape("./Assets/jupiter.gif")  # setting the shape
         planet1.color("red")  # setting the colour as red
         planet1.penup()
         x = random.randint(-int(screen_width / 2), int(screen_width / 2))  # getting random values under the screen width
@@ -79,7 +79,7 @@ def game():
 
         planet2 = turtle.Turtle()  # creating a object for planet2
         planet2.speed(0)  # setting the speed as maximum
-        planet2.shape('Assets/venus.gif')  # setting the shape
+        planet2.shape('./Assets/venus.gif')  # setting the shape
         planet2.color("red")  # setting the colour as red
         planet2.penup()
         x = random.randint(-int(screen_width / 2), int(screen_width / 2))  # getting random values under the screen width
@@ -88,7 +88,7 @@ def game():
 
         planet3 = turtle.Turtle()  # creating a object for planet3
         planet3.speed(0)  # setting the speed as maximum
-        planet3.shape('Assets/neptune.gif')  # setting the shape
+        planet3.shape('./Assets/neptune.gif')  # setting the shape
         planet3.color("red")  # setting the colour as red
         planet3.penup()
         x = random.randint(-int(screen_width / 2), int(screen_width / 2))  # getting random values under the screen width
@@ -98,7 +98,7 @@ def game():
         global winner
         winner = turtle.Turtle()  # creating a object for planet
         winner.speed(0)  # setting the speed as maximum
-        winner.shape('Assets/winner (2).gif')  # setting the shape
+        winner.shape('./Assets/winner (2).gif')  # setting the shape
         winner.color("red")  # setting the colour as red
         winner.penup()
 
@@ -107,7 +107,7 @@ def game():
         global obstacle,obstacle2
         obstacle = turtle.Turtle()  # creating a object for obstacle
         obstacle.speed(0)  # setting the speed as maximum
-        obstacle.shape("Assets/ufotrail.gif")  # setting the shape as square
+        obstacle.shape("./Assets/ufotrail.gif")  # setting the shape as square
         obstacle.shapesize(1, random.randint(5, 8), 1)  # increasing the width of square
         obstacle.color("red")  # setting the colour as red
         obstacle.penup()
@@ -118,7 +118,7 @@ def game():
 
         obstacle2 = turtle.Turtle()  # creating a object for obstacle2
         obstacle2.speed(0)  # setting the speed as maximum
-        obstacle2.shape("Assets/ufotrail.gif")  # setting the shape
+        obstacle2.shape("./Assets/ufotrail.gif")  # setting the shape
         obstacle2.shapesize(1, 10, 1)  # increasing the width
         obstacle2.color("green")  # setting the colour as green
         obstacle2.penup()
@@ -143,13 +143,13 @@ def game():
         ufo = turtle.Turtle()  # creating a object for obstacle
         ufo.speed(3)
         ufo.penup()
-        ufo.shape('Assets/ufo.gif')
+        ufo.shape('./Assets/ufo.gif')
         ufo.goto(-300, -240)
         # ufo.stamp()
         ufo1 = turtle.Turtle()  # creating a object for obstacle
         ufo1.speed(3)
         ufo1.penup()
-        ufo1.shape('Assets/ufo.gif')
+        ufo1.shape('./Assets/ufo.gif')
         ufo1.goto(300, 240)
 
     def int_asteroid():
@@ -157,26 +157,26 @@ def game():
         asteroid = turtle.Turtle()  # creating a object for asteroid
         asteroid.speed(3)
         asteroid.penup()
-        asteroid.shape('Assets/asteroid1.gif')
+        asteroid.shape('./Assets/asteroid1.gif')
         asteroid.hideturtle()
         asteroid.goto(1100,900)
 
         asteroid1 = turtle.Turtle()  # creating a object for asteroid
         asteroid1.speed(3)
         asteroid1.penup()
-        asteroid1.shape('Assets/asteroid1.gif')
+        asteroid1.shape('./Assets/asteroid1.gif')
         asteroid1.hideturtle()
         asteroid1.goto(1100,900)
     def int_start():
         start = turtle.Turtle()  # creating a object for start
         # start.speed(3)
         start.penup()
-        start.shape('Assets/start_image.gif')
+        start.shape('./Assets/start_image.gif')
         start.penup()
         start.showturtle()
         # start.stamp()
         turtle.update()
-        playsound.playsound('Assets/Game_start.mp3',False)
+        playsound.playsound('./Assets/Game_start.mp3',False)
         time.sleep(2)
         start.hideturtle()
         start.clear()
@@ -225,7 +225,7 @@ def game():
     def move():  # creating a function for moving
         if player.direction == "up":  # check if player direction equals up
             # player.shape('snake_head_down.gif')
-            player.shape('Assets/rocket _up.gif')
+            player.shape('./Assets/rocket _up.gif')
             # for segment in segments:  # hiding the turtles
             #     segment.shape('rocket tail.gif')
             player.setheading(0)
@@ -262,7 +262,7 @@ def game():
             player.setx(x + 20)
         if player.direction == "down":  # check if player direction equals down
             # player.shape("snake_head_up.gif")
-            player.shape('Assets/rocket down.gif')  # registering the shape
+            player.shape('./Assets/rocket down.gif')  # registering the shape
             player.settiltangle(180)
 
 
@@ -270,13 +270,13 @@ def game():
             player.sety(y - 20)  # moving down
         if player.direction == "left":  # check if player direction equals left
               # registering the shape
-            player.shape('Assets/rocket right.gif')
+            player.shape('./Assets/rocket right.gif')
             player.settiltangle(-90)
 
             x = player.xcor()  # getting the turtle x cordinate
             player.setx(x - 20)  # moving left
         if player.direction == "right":
-            player.shape('Assets/rocket left.gif')# check if player direction equals right
+            player.shape('./Assets/rocket left.gif')# check if player direction equals right
             # player.shape('snake_head_left.gif')
 
             player.setheading(90)
@@ -426,7 +426,7 @@ def game():
         if player.xcor() > 550 or player.xcor() < -550 or player.ycor() > 290 or player.ycor() < -290:
             time.sleep(1)  # sleeping for 1 second
             player.goto(0, 0)  # resetting the position
-            player.shape("Assets/rocket _up.gif")
+            player.shape("./Assets/rocket _up.gif")
             player.direction = "stop"  # making the turtle to stop
 
 
@@ -467,7 +467,7 @@ def game():
             pen.write("Game Over !!", align="center",
                           font=("Courier", 35, "normal"))  # printing game over
             time.sleep(1)
-            playsound.playsound('Assets/laser_hit.wav',False)
+            playsound.playsound('./Assets/laser_hit.wav',False)
 
             repeat = screen.textinput("Game over!", "type yes or no to play again")
             while not repeat:
@@ -496,7 +496,7 @@ def game():
         if player.distance(asteroid) < 63 or player.distance(asteroid1) < 63 or player.distance(ufo1)<74 or player.distance(ufo)<74:
             time.sleep(1)  # sleeping for 1 second
             player.goto(0, 0)  # resetting the position
-            player.shape("Assets/rocket _up.gif")
+            player.shape("./Assets/rocket _up.gif")
             player.direction = "stop"  # making the turtle to stop
 
 
@@ -537,7 +537,7 @@ def game():
 
             pen.write("Game Over !!", align="center",
                       font=("Courier", 35, "normal"))  # printing game over
-            playsound.playsound('Assets/laser_hit.wav')
+            playsound.playsound('./Assets/laser_hit.wav')
 
             # time.sleep(1)
             repeat = screen.textinput("Game over!", "type yes or no to play again")
@@ -585,7 +585,7 @@ def game():
             delay -= 0.001
 
             score += 10  # increasing the score
-            playsound.playsound('Assets/Hit_for_first_game.mp3', block=False)
+            playsound.playsound('./Assets/Hit_for_first_game.mp3', block=False)
             if score > high_score:  # Checking if score is the highest sore
                 high_score = score  # Then update  the list to the high score
             pen.clear()
@@ -594,7 +594,7 @@ def game():
 
         if player.distance(obstacle2) < 70 or player.distance(obstacle) < 70:  # Check for a collision with the obstacle
             score-= 10  # decreasing the score
-            playsound.playsound('Assets/punch_sound.wav',block=False)
+            playsound.playsound('./Assets/punch_sound.wav',block=False)
 
             x = random.randint(-200, 200)
             y = random.randint(-190, 190)
@@ -701,7 +701,7 @@ def game():
         if score == 300:
             # time.sleep(1)  # sleeping for 1 second
             player.goto(0, 0)  # resetting the position
-            player.shape("Assets/rocket _up.gif")
+            player.shape("./Assets/rocket _up.gif")
             player.direction = "stop"  # making the turtle to stop
 
 
@@ -758,7 +758,7 @@ def game():
                 pen.clear()
                 pen.write("Score: {}  High Score: {}  Level: {}".format(score, high_score, level), align="center",
                           font=("Courier", 16, "normal"))  # resetting the score
-                playsound.playsound('Assets/Won_the_game.mp3', False)
+                playsound.playsound('./Assets/Won_the_game.mp3', False)
 
 
             else:

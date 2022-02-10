@@ -16,7 +16,7 @@ white = (255, 255, 255)
 width = 931
 height = 502
 display_surface = pygame.display.set_mode((width,height))
-image1 = pygame.image.load('Assets/my_.gif')
+image1 = pygame.image.load('./Assets/my_.gif')
 display_surface.fill(white)
 display_surface.blit(image1, (0, 0))
 pygame.display.update()
@@ -30,9 +30,9 @@ display_surface = pygame.display.set_mode((width,height))
 
 
 # create a surface object, image is drawn on it.
-image = pygame.image.load('Assets/Thank_You.gif')
+image = pygame.image.load('./Assets/Thank_You.gif')
 
-pygame.mixer.music.load("Assets/Thank_you.mp3")
+pygame.mixer.music.load("./Assets/Thank_you.mp3")
 
 # Setting the volume
 pygame.mixer.music.set_volume(0.7)
